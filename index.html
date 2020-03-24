@@ -1,0 +1,241 @@
+ <!DOCTYPE html>
+ <html onmousedown="return false;" oncontextmenu = "return false;" onkeydown = "return false;">
+ <head>
+     <title>Life Quotes</title>
+     <link href = "styles.css" rel = "stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/08157550c3.js" crossorigin="anonymous"></script>
+ </head>
+ <body>
+     <main id="main">
+        <header><span>Life Quotes</span><i class="fas fa-cog" id ="settings" onclick="openSettings();"></i></header>
+        <div id = "students">
+         <!--    <div class = "student">
+                     <img src = "https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png" class = "img"><p class = "author">B Sai Praneeth</p>
+                 </div>    -->
+        </div>
+     </main>
+     <div id="new-pages"></div>
+     <div id="settings-page"></div>
+     <script type = "text/javascript">
+     
+     // security code starts
+     document.onkeydown = function(e){
+         if(e.which === 123){
+             return false;
+         }
+     }
+     var nocopy = document.getElementsByTagName('img')
+         for (var el of nocopy){
+             el.oncontextmenu = function(){return false;}
+         }
+    /*var currentHtmlContent;
+ 
+var element = new Image();
+ 
+var elementWithHiddenContent = document.querySelector("#element-to-hide");
+ 
+var innerHtml = elementWithHiddenContent.innerHTML;
+ 
+ 
+ 
+element.__defineGetter__("id", function() {
+ 
+    currentHtmlContent= "";
+ 
+});
+ 
+ 
+ 
+setInterval(function() {
+ 
+    currentHtmlContent= innerHtml;
+ 
+    console.log(element);
+ 
+    console.clear(); 
+ 
+    elementWithHiddenContent.innerHTML = currentHtmlContent;
+ 
+}, 1000);
+ 
+//copied from Jonas.
+//Here #element-to-hide is the id of element you want to hide*/
+
+     // security code ends. You can work from here
+
+
+     function id(x){
+         return document.getElementById(x)
+     }
+         var students = [];
+         var allQuotes = [];
+         var allPetNames = [];
+         var photos = [];
+         var numbers = [];
+         var skills = [];
+         var dobs = [];
+         var indices = [];
+         var number = 0;
+         var main = "";
+
+         function addStudent(name,photo,quotes,petNames,skill,dob,number){
+             students.push(name)
+             allQuotes.push(quotes)
+             allPetNames.push(petNames)
+             skills.push(skill)
+             dobs.push(dob)
+             numbers.push(number)
+             if(photo == ""){
+                 photo = "https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png"
+                 photos.push(photo)
+             }
+             number++
+
+             var index = students.indexOf(name)
+             indices.push(index)
+             var student = document.createElement('p')
+             student.className = "student"
+             student.id = "student-"+index
+             student.onclick = function(){display(index)}
+             student.innerHTML = '<img src = "'+photo+'" class = "img" id = img-'+index+'><p class = "author" id = author-'+index+'>'+name+'</p>'
+             var parentDiv = document.getElementById("students")
+             parentDiv.appendChild(student)
+         }
+        
+function goBack(i){
+    id("new-pages").removeChild(id("newPage-"+i))
+    main = ""
+}
+
+  
+function display(i){
+            if(main != ""){
+                var x = main.length
+                goBack(main[x-1])
+            }
+            
+            main = 'main-'+i
+            var fullProfile = document.createElement('div')
+            var newPage = document.createElement("p")   
+            newPage.className = "newPage"
+            newPage.id = "newPage-"+i
+            var covers = document.createElement("p")
+            covers.className = "covers"
+            newPage.appendChild(covers)
+            var authorDup = document.createElement("p")
+            authorDup.id = "authorDup-"+i
+            authorDup.className = "authorDup"
+            authorDup.innerHTML = `<span>${id("author-"+i).innerText}</span>` 
+            var imgDup = document.createElement("img")
+            imgDup.className = "imgDup"
+            imgDup.id = "imgDup-"+i
+            imgDup.src = id("img-"+i).src
+            newPage.appendChild(authorDup)
+            newPage.appendChild(imgDup)
+
+          authorDup.innerHTML += `
+          <p class="back" id=back-${i} onclick=goBack(${i})>Back</p>
+            `        
+           
+            id("new-pages").appendChild(newPage)
+            var name = "K Sarath Chandra"
+            var minLen = name.length
+            if(students[i].length > minLen){
+                var diff = students[i].length-minLen
+                authorDup.style.fontSize = 225-3*diff+"%"
+            }
+            getQuotes(i)
+        }
+function getQuotes(i){
+    var squotes = allQuotes[i]
+    var allQuotesDiv = document.createElement('div')
+    allQuotesDiv.id = "allQuotesDiv"
+    id("newPage-"+i).appendChild(allQuotesDiv)
+    for (quote of squotes){
+        var index = squotes.indexOf(quote)
+        var quoteDiv = document.createElement("p")
+        quoteDiv.className = "quote-div"
+        quoteDiv.id = "quoteDiv-"+index
+        quoteDiv.innerText = quote
+        allQuotesDiv.appendChild(quoteDiv)
+        if(index == squotes.length-1){
+            quoteDiv.style.width = "90%"
+            quoteDiv.style.paddingRight = "30px"
+        }
+    }
+    
+}
+
+
+// name
+// photo
+// quote
+// petname
+// skill
+// dob
+// number
+
+
+    addStudent("B Sai Praneeth","",["Be like a drug, let them die for you","Whoever said money can't solve your problems, must not have had enough money solve them.","Great things never come from comfort zones"],["Bp","bunny","plenty"],["Web Development"],"7th April 2005","9642013988")
+    addStudent("K Sarath Chandra","",["If you are bad, then I am your dad","Help is the most expensive gift, don't expect it from everyone, because few are good by heart, the rest only talk."],["Konda","Athadu Sarath","Sara Sara Naidu"],["Making new songs"],"dob","num")
+    addStudent("B Sai Santosh Srivatsav","",["Destruction comes with silence","Necessity is the mother of invention"],["Patlu"],["Being cool all the time"],"dob","num")
+    addStudent("M V S Geeth Sreetham","",["Everything counts"],["MS","Ingimam","Geeth Peeth"],["Talented","Can lick anything","DM SolMan"],"dob","num")
+    addStudent("B Ram Prasad","",["Always try to do something different"],["RP","Soli"],["Electronics","The Physcist"],"dob","num")
+    addStudent("P Abhishek Kumar","",["The greatest gift god given us, is that he made us born like a human"],["Aaku","Palli"],["Most Talented","Drawing"],"dob","num")
+    addStudent("S Mukesh Raj","",["Life is nothing but clapping"],["Booby","Jaani","Collector"],["Professional at clapping","Having more concentration on studies"],"dob","num")
+    addStudent("B Moses Suresh Kumar","",["Secret is the success of the energy of my boost"],["Mojo","Karridu"],["Good at Jokes","Sign language"],"dob","num")
+    addStudent("G Sai Ganesh","",["Every success story is a story of great failures"],["Pridvi shey","Pithidu-Raja-118","Thammudu"],["Talented","Being Innnocent"],"dob","num")
+    addStudent("D Rushik","",["Our life should be a quotation to the world"],["Rusk-alien","Patan","Kama-rusky"],["Master in memrising","Batti-king","Having the most concentration on studies"],"dob","num")
+    
+
+// name
+// photo
+// quote
+// petname
+// skill
+// dob
+// number
+
+indices = shuffle(indices)
+         for (i of indices){
+             var student = id('student-'+i)
+             var newStudent = document.createElement('p')
+             newStudent.className = student.className
+             newStudent.innerHTML = student.innerHTML
+             newStudent.onclick = student.onclick
+             newStudent.id = "newStudent-"+i
+             id("students").removeChild(student) 
+             id("students").appendChild(newStudent)
+            var name = "K Sarath Chandra"
+            var minLen = name.length
+            if(students[i].length > minLen){
+            var diff = students[i].length-minLen
+                id("author-"+i).style.fontSize = 150-2*diff+"%"
+            }
+            }
+        
+         var themes = [["f4eeff","424874","a6b1e1","","white"],["#fcf8e8","#df7861","#ecb390","","black"],["f6c7c7","f12b6b","ff467e","fd94b4","black"]];
+         // [main], [header], [student], [new-page], [font-color]
+         
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  
+  while (0 !== currentIndex) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+function css( element, property ) {
+ return window.getComputedStyle( element, null ).getPropertyValue( property );
+  }
+
+     </script>
+     <noscript>You should be able to use JavaScript in order to view this page. It is advised to use Google Chrome, Mozilla Firefox, etc.</noscript>
+ </body>
+ </html>
