@@ -85,18 +85,25 @@ header span{
     background-size: cover;
     background-attachment: fixed;
 }
-.back{
+.fa-arrow-left{
     color:black;
     font-family:"josefin sans";
     z-index:12;
+    height:22.5px;
+    width:22.5px;
     position:absolute;
-    cursor:pointer;
-    font-size: 50%;
-    top:0;
-    left:0;
-    background-color:#eee;
     padding:10px;
+    left:10px;
+    cursor:pointer;
+    font-size: 70%;
+    background-color:#ff467e;
+    border-radius: 50%;
     margin:0;
+    transition: 0.3s;
+}
+.fa-arrow-left:hover{
+    background-color:black;
+    color:#ff467e;
 }
 .imgDup{
     position: absolute;
@@ -107,7 +114,7 @@ header span{
     width:110px;
     border-radius:50%;
     background-color: #fff;
-    border: 0px solid #f12b6b;
+    border: 2px solid #f12b6b;
 }
 .authorDup{
     font-size:225%;
@@ -188,7 +195,7 @@ header span{
         width: 500px;
         border-radius: 2vh;
     }
-    .back{
+    .fa-arrow-left{
         top:2.5vh;
         display: none;
     }
@@ -203,6 +210,7 @@ header span{
     }
     .imgDup{
         margin-left: 30px;
+        margin-top:0;
     }
     header{
         top:2.5vh;
