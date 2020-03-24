@@ -16,7 +16,7 @@ main{
     overflow-x:hidden;
     background:#f6c7c7;
 }
-header,.authorDup{
+header,.authorDup,.header{
     position:fixed;
     top:0;
     height:10vh;
@@ -28,7 +28,7 @@ header,.authorDup{
     display: flex;
     align-items:center;
 }
-header span{
+header span,.header span{
     font-family:"Sacramento";
     font-size:250%;
     margin-left:20px;
@@ -73,7 +73,7 @@ header span{
     border-radius:6px;
     background: linear-gradient(to bottom, #ff1084, #33001b);
 }
-.newPage{
+.newPage,#settings-page{
     z-index:10;
     background:#fd94b4;
     margin:0;
@@ -85,7 +85,7 @@ header span{
     background-size: cover;
     background-attachment: fixed;
 }
-.fa-arrow-left{
+.fa-arrow-left,.fa-times{
     color:black;
     font-family:"josefin sans";
     z-index:12;
@@ -101,7 +101,13 @@ header span{
     margin:0;
     transition: 0.3s;
 }
-.fa-arrow-left:hover{
+.fa-times{
+    font-size:150%;
+    height: 22.5px;
+    padding:10px;
+    width:20px;
+}
+.fa-arrow-left,.fa-times:hover{
     background-color:black;
     color:#ff467e;
 }
@@ -181,6 +187,18 @@ header span{
     font-size:125%;
     font-weight:lighter;
 }
+#settings-page{
+    display: none;
+    background-color:#f6c7c7;
+    position: fixed;
+    top: 0;
+    left:0;
+}
+#settings-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -188,14 +206,15 @@ header span{
 
 /*For Computers*/
 @media (min-width: 900px){
-    main,.newPage{
+    main,.newPage,#settings-page{
         height:95vh;
+        position: relative;
         max-height: 95vh;
         margin:2.5vh;
         width: 500px;
         border-radius: 2vh;
     }
-    .fa-arrow-left{
+    .fa-arrow-left,.fa-times{
         top:2.5vh;
         display: none;
     }
@@ -212,7 +231,7 @@ header span{
         margin-left: 30px;
         margin-top:0;
     }
-    header{
+    header,.header{
         top:2.5vh;
         width:500px;
         border-radius:2vh 2vh 0 0;
