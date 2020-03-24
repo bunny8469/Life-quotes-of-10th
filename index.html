@@ -1,5 +1,5 @@
  <!DOCTYPE html>
- <html onmousedown="return false;" oncontextmenu = "return false;" onkeydown = "return false;">
+ <html>
  <head>
      <title>Life Quotes</title>
      <link href = "styles.css" rel = "stylesheet" type="text/css">
@@ -110,12 +110,11 @@ function goBack(i){
     id("new-pages").removeChild(id("newPage-"+i))
     main = ""
 }
-
   
 function display(i){
             if(main != ""){
-                var x = main.length
-                goBack(main[x-1])
+                var x = main.split("-")
+                goBack(x[1])
             }
             
             main = 'main-'+i
@@ -181,7 +180,6 @@ function getQuotes(i){
 
 
     addStudent("B Sai Praneeth","",["Be like a drug, let them die for you","Whoever said money can't solve your problems, must not have had enough money solve them.","Great things never come from comfort zones"],["Bp","bunny","plenty"],["Web Development"],"7th April 2005","9642013988")
-    addStudent("K Sarath Chandra","",["If you are bad, then I am your dad","Help is the most expensive gift, don't expect it from everyone, because few are good by heart, the rest only talk."],["Konda","Athadu Sarath","Sara Sara Naidu"],["Making new songs"],"dob","num")
     addStudent("B Sai Santosh Srivatsav","",["Destruction comes with silence","Necessity is the mother of invention"],["Patlu"],["Being cool all the time"],"dob","num")
     addStudent("M V S Geeth Sreetham","",["Everything counts"],["MS","Ingimam","Geeth Peeth"],["Talented","Can lick anything","DM SolMan"],"dob","num")
     addStudent("B Ram Prasad","",["Always try to do something different"],["RP","Soli"],["Electronics","The Physcist"],"dob","num")
@@ -191,6 +189,8 @@ function getQuotes(i){
     addStudent("G Sai Ganesh","",["Every success story is a story of great failures"],["Pridvi shey","Pithidu-Raja-118","Thammudu"],["Talented","Being Innnocent"],"dob","num")
     addStudent("D Rushik","",["Our life should be a quotation to the world"],["Rusk-alien","Patan","Kama-rusky"],["Master in memrising","Batti-king","Having the most concentration on studies"],"dob","num")
     addStudent("A Ananth Krishna","https://dl.dropbox.com/s/lrq4ehw29ia1j8i/Screenshot_20200324-173957.png",["Positive everything is better than negative nothing","You always pass failure on the way to success"],[""],[""],"dob","num")
+    addStudent("K Sarath Chandra","",["If you are bad, then I am your dad","Help is the most expensive gift, don't expect it from everyone, because few are good by heart, the rest only talk."],["Konda","Athadu Sarath","Sara Sara Naidu"],["Making new songs"],"dob","num")
+    addStudent("B Mutyam Jai","",["Everyone can smile but only a few can make others smile","Don't f*ck for son, f*ck for fun"],["Jai","Pink","Bocchu","MJ"],["Good at explaining","Sense of humour","Friendly guy"],"dob","num")
     
     
 
@@ -218,8 +218,7 @@ indices = shuffle(indices)
             var diff = students[i].length-minLen
                 id("author-"+i).style.fontSize = 150-2*diff+"%"
             }
-            }
-         addStudent("example","","","","","","")
+        }
         
          var themes = [["f4eeff","424874","a6b1e1","","white"],["#fcf8e8","#df7861","#ecb390","","black"],["f6c7c7","f12b6b","ff467e","fd94b4","black"]];
          // [main], [header], [student], [new-page], [font-color]
