@@ -189,7 +189,7 @@ header span,.header span{
 }
 #settings-page{
     display: none;
-    background-color:#f6c7c7;
+    background-color:#fff;
     position: fixed;
     top: 0;
     left:0;
@@ -199,6 +199,18 @@ header span,.header span{
     justify-content: center;
     align-items: center;
 }
+.themes{
+    position: relative;
+    height:20vh;
+    width:90%;  
+    margin:3vh 5% 3vh 5%;  
+    background-color:#E0E5EC;
+    box-shadow: 9px 9px 16px rgba(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
+}
+#theme1{
+    margin-top:12vh;
+}
+
 
 
 
