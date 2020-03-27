@@ -152,7 +152,18 @@ header span,.header span{
     right:40px;
 }
 .covers{
-    height:25vh;
+    height:20vh;
+}
+.ques{
+    margin:10px;
+    font-family:"josefin sans";
+    font-size:120%;
+    margin-right:0;
+}
+.ans{
+    font-family:'cookie';
+    font-size:170%;
+    margin:0;
 }
 #allQuotesDiv{
     width:100%;
