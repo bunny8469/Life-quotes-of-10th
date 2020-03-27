@@ -101,13 +101,28 @@ setInterval(function() {
              allQuotes.push(quotes)
              allPetNames.push(petNames)
              skills.push(skill)
-             dobs.push(dob)
-             numbers.push(nmbr)
-             ambitions.push(ambition)
              genders.push(gender)
              if(photo == ""){
                  photo = "https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png"
                  photos.push(photo)
+             }
+             else{
+                photos.push(photo)
+             }
+             if(ambition == ""){
+                ambition = "Data Scientist"
+                ambitions.push(ambition)
+             }
+             else{
+                ambitions.push(ambition)
+             }
+             if(dob == "dob"){
+                dob = "1st January 2010"
+                dobs.push(dob)
+             }
+             if(nmbr == 'num'){
+                nmbr = "9876543210"
+                numbers.push(nmbr)
              }
              number++
 
@@ -156,12 +171,25 @@ function display(i){
           <i class="fas fa-arrow-left" id=back-${i} onclick=goBack(${i})></i>
             `        
             var details = document.createElement("table")
-            details.innerHTML = `"
+            if(genders[i] == "Male"){
+                var sub = "He"
+                var obj = "him"
+            }
+            else{
+                var sub = "She"
+                var obj = "her"
+            }
+            details.innerHTML = `
             <tr>
-                <td>
+                <td><p class = 'ques'>${sub} wants to become a</p></td>
+                <td><p class = 'ans'>: ${ambitions[i]}</p></td>
             </tr>
             <tr>
-            </tr>"`
+                <td><p class = 'ques'>${sub} was born on</p></td>
+                <td><p class = 'ans'>: ${dobs[i]}</p></td>
+            </tr>
+            `
+            newPage.appendChild(details)
             id("new-pages").appendChild(newPage)
             var name = "K Sarath Chandra"
             var minLen = name.length
@@ -265,8 +293,8 @@ function checkAllStudents(){
     addStudent("K Sarath Chandra","",["If you are bad, then I am your dad","Help is the most expensive gift, don't expect it from everyone, because few are good by heart, the rest only talk."],["Konda","Athadu Sarath","Sara Sara Naidu"],["Making new songs"],"dob","","num","Male")
     addStudent("B Mutyam Jai","",["Everyone can smile but only a few can make others smile","Don't f*ck for son, f*ck for fun"],["Jai","Pink","Bocchu","MJ"],["Good at explaining","Sense of humour","Friendly guy"],"dob","","num","Male")
     addStudent("T Nithin","",["In life, there are many obstacles. The person who changes them into milestones, becomes successful","Silence is more dangerous than violence"],["Paalu","Panda"],[""],"dob","","num","Male")
-    addStudent("Ch Netaji","",["Don't love and cry, just fu#k and fly"],["Motu","Tataji"],[""],"dob","","num","Male")
-    
+    addStudent("Ch Netaji","",["Don't love and cry, just fu#k and fly"],["Motu","Tataji"],[""],"dob","","num","Male")   
+//checkAllStudents()
 
 // name
 // photo
@@ -313,6 +341,10 @@ function shuffle(array) {
 }
 function css( element, property ) {
  return window.getComputedStyle( element, null ).getPropertyValue( property );
+  }
+
+  window.onbeforeunload = function(){
+    sweetAlert("You're leaving us.","Come back soon.")
   }
 
      </script>
