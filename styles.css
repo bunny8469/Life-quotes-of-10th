@@ -238,6 +238,9 @@ header span,.header span{
     justify-content: center;
     align-items: center;
 }
+#ques-2{
+    margin-top:10px;
+}
 .themes{
     position: relative;
     height:20vh;
