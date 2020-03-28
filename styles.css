@@ -126,7 +126,7 @@ header span,.header span{
     font-size:225%;
     z-index:11;
     position: fixed;
-    background-color:#f12b6b;
+    background-color:#ff467e;
     width:100vw;
     min-height:70px; 
     font-family: "Odibee sans";
@@ -157,7 +157,7 @@ header span,.header span{
 .ques{
     margin:10px;
     font-family:"josefin sans";
-    font-size:120%;
+    font-size:115%;
     margin-right:0;
 }
 .ans{
