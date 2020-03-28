@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cookie|Grand+Hotel|Ubuntu|Oswald|Odibee+Sans|Josefin+Sans|Lobster|Pacifico|Sacramento|Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cookie|Grand+Hotel|Ubuntu|Oswald|Poppins|Odibee+Sans|Josefin+Sans|Lobster|Pacifico|Sacramento|Satisfy&display=swap');
 
 body{
     margin:0;
@@ -71,7 +71,8 @@ header span,.header span{
 }
 ::-webkit-scrollbar-thumb{
     border-radius:6px;
-    background: linear-gradient(to bottom, #ff1084, #33001b);
+    background:black;
+    /*linear-gradient(to bottom, #ff1084, #33001b)*/
 }
 .newPage,#settings-page{
     z-index:10;
@@ -164,6 +165,33 @@ header span,.header span{
     font-family:'cookie';
     font-size:170%;
     margin:0;
+}
+#theme-3{
+    background-color:lightskyblue;
+}
+.btn{
+    font-family: "Poppins";
+    padding: 10px 30px;
+    text-transform: uppercase;
+    position: absolute;
+    right:10%;
+    text-decoration:none;
+    cursor:pointer;
+    font-weight:500;
+    letter-spacing:2px;
+    color:#5a84a2;
+    font-size:18px;
+    border-radius: 40px;
+    box-shadow:-2px -2px 8px rgba(255,255,255,1) ,
+               -2px -2px 12px rgba(255,255,255,0.5),
+               inset -2px -2px 4px rgba(255,255,255,0.1),
+               -2px -2px 8px rgba(0,0,0,0.15);
+}
+.btn:hover{
+    box-shadow:inset -2px -2px 8px rgba(255,255,255,1) ,
+               inset -2px -2px 12px rgba(255,255,255,0.5),
+               inset -2px -2px 4px rgba(255,255,255,0.1),
+               inset -2px -2px 8px rgba(0,0,0,0.15);
 }
 #allQuotesDiv{
     width:100%;
