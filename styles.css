@@ -156,7 +156,7 @@ header span,.header span{
     height:20vh;
 }
 .ques{
-    margin:10px;
+    margin-left:10px;
     font-family:"josefin sans";
     font-size:115%;
     margin-right:0;
@@ -294,6 +294,9 @@ header span,.header span{
         top:2.5vh;
         width:500px;
         border-radius:2vh 2vh 0 0;
+    }
+    .ques{
+        margin:10px;
     }
     .student{
         width:450px;
