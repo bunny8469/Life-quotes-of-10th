@@ -174,7 +174,7 @@ header span,.header span{
     padding: 10px 30px;
     text-transform: uppercase;
     position: absolute;
-    right:10%;
+    right:5%;
     text-decoration:none;
     cursor:pointer;
     font-weight:500;
@@ -279,6 +279,9 @@ header span,.header span{
         width:500px;
         border-radius:2vh 2vh 0 0;
         padding:0;
+    }
+    .btn{
+        right:10%;
     }
     .authorDup span{
         margin-right:0px;
