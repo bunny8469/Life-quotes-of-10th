@@ -1,5 +1,5 @@
  <!DOCTYPE html>
- <html oncontextmenu = "return false;" onkeydown = "return false;" onmousedown = "return false;">
+ <html >
  <head>
      <title>Life Quotes</title>
      <link href = "styles.css" rel = "stylesheet" type="text/css">
@@ -11,7 +11,7 @@
  </head>
  <body>
      <main id="main">
-        <header class = "header"><span>Life Quotes</span><i class="fas fa-cog" id ="settings" onclick="openSettings();"></i></header>
+        <header class = "header" id = "header"><span>Life Quotes</span><i class="fas fa-cog" id ="settings" onclick="openSettings();"></i></header>
         <div id = "students">
          <!--    <div class = "student">
                      <img src = "https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png" class = "img"><p class = "author">B Sai Praneeth</p>
@@ -20,15 +20,15 @@
      </main>
      <div id="new-pages"></div>
      <div id="settings-page">
-         <div id="settings-header" class = "header"><i class ="fas fa-times" onclick = "closeSettings()"></i><span>Settings</span></div>
+         <div id="settings-header" class = "header"><i class ="fas fa-times" id="close-settings" onclick = "closeSettings()"></i><span>Settings</span></div>
          <div id="theme1" class = "themes"><span>Theme - 1</span>
-
+            <a id = "theme-1" class = "btn" onclick = "changeTheme(1)">Select</a>
         </div>
          <div id="theme2" class = "themes"><span>Theme - 2</span>
-            
+            <a id = "theme-2" class = "btn" onclick = "changeTheme(2)">Select</a>
         </div>
          <div id="theme3" class = "themes"><span>Theme - 3</span>
-            
+            <a id = "theme-3" class = "btn" onclick = "changeTheme(3)"><i class = "fas fa-check"></i></a>
         </div>
      </div>
      <script type = "text/javascript">
@@ -147,7 +147,7 @@ function goBack(i){
     id("new-pages").removeChild(id("newPage-"+i))
     main = ""
 }
-  
+var themeNo = 3; 
 function display(i){
             if(main != ""){
                 var x = main.split("-")
@@ -166,10 +166,13 @@ function display(i){
             authorDup.id = "authorDup-"+i
             authorDup.className = "authorDup"
             authorDup.innerHTML = `<span>${id("author-"+i).innerText}</span>` 
+            authorDup.style.backgroundColor = themes[themeNo-1][2]
+            authorDup.style.color = themes[themeNo-1][4]
             var imgDup = document.createElement("img")
             imgDup.className = "imgDup"
             imgDup.id = "imgDup-"+i
             imgDup.src = id("img-"+i).src
+            imgDup.style.borderColor = themes[themeNo-1][2]
             newPage.appendChild(authorDup)
             newPage.appendChild(imgDup)
 
@@ -189,15 +192,19 @@ function display(i){
                 <td><p class = 'ans'>: ${ambitions[i]}</p></td>
             </tr>
             `
+            newPage.style.backgroundColor = themes[themeNo-1][0]
             newPage.appendChild(details)
-            id("new-pages").appendChild(newPage)
             var name = "K Sarath Chandra"
             var minLen = name.length
             if(students[i].length > minLen){
                 var diff = students[i].length-minLen
                 authorDup.style.fontSize = 225-3*diff+"%"
             }
+            id("new-pages").appendChild(newPage)
+            id("back-"+i).style.backgroundColor = themes[themeNo-1][2]
+            id("back-"+i).style.color = themes[themeNo-1][4]
             getQuotes(i)
+        
         }
 function getQuotes(i){
     var squotes = allQuotes[i]
@@ -227,6 +234,32 @@ function openSettings(){
         goBack(x[1])
     }
     id("settings-page").style.display = "block"
+}
+function changeTheme(x){
+    for(var i = 1;i < 4;i++){
+        id("theme-"+i).innerHTML = "Select"
+        id("theme-"+i).style.backgroundColor = "#E0E5EC"
+    }
+    themeNo = x;
+    id("theme-"+x).style.backgroundColor = "lightSkyBlue"
+    id("theme-"+x).innerHTML = "<i class = 'fas fa-check'></i>"
+    id("header").style.backgroundColor = themes[x-1][1]
+    id("header").style.color = themes[x-1][4]
+    id("settings-header").style.backgroundColor = themes[themeNo-1][1]
+    id("settings-header").style.color = themes[x-1][4]
+    id("close-settings").style.backgroundColor = themes[themeNo-1][2]
+    id("close-settings").style.color = themes[x-1][4]
+
+    id("main").style.backgroundColor = themes[x-1][0]
+    var stdnts = document.getElementsByClassName("student")
+    for(stdnt of stdnts){
+        stdnt.style.backgroundColor = themes[x-1][2]
+        stdnt.style.color = themes[x-1][4]
+    }
+    var imgs = document.getElementsByClassName("img")
+    for(img of imgs){
+        img.style.borderColor = themes[x-1][2]
+    }
 }
 function newLine(){
     return document.write("<br>")
@@ -322,7 +355,11 @@ indices = shuffle(indices)
             }
         }
         
-         var themes = [["f4eeff","424874","a6b1e1","","white"],["#fcf8e8","#df7861","#ecb390","","black"],["f6c7c7","f12b6b","ff467e","fd94b4","black"]];
+         var themes = [
+         ["#f4eeff","#424874","#a6b1e1","","white"],
+         ["#fcf8e8","#df7861","#ecb390","","black"],
+         ["#f6c7c7","#f12b6b","#ff467e","#fd94b4","black"]
+                      ];
          // [main], [header], [student], [new-page], [font-color]
          
 
