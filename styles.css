@@ -298,6 +298,9 @@ header span,.header span{
         width:500px;
         border-radius:2vh 2vh 0 0;
     }
+    ::-webkit-scrollbar-thumb{
+        background:#444;
+    }
     .ques{
         margin:10px;
     }
