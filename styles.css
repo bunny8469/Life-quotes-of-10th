@@ -68,9 +68,9 @@ header span,.header span{
 }
 .crown{
     width:56px;
-    height:20px;
+    height:50px;
     position:absolute;
-    top:0;
+    top:-10px;
     left:0;
 }
 ::-webkit-scrollbar{
