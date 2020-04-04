@@ -66,6 +66,10 @@ header span,.header span{
     left:0;
     transition:0.6s;
 }
+.crown{
+    width:56px;
+    height:20px;
+}
 ::-webkit-scrollbar{
     width:2px;
 }
