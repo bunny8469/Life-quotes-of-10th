@@ -364,9 +364,7 @@ indices = shuffle(indices)
          // [main], [header], [student], [new-page], [font-color]
          
 function removeStudent(x){
-  var studentDiv = id("students")
-  var student = id("student-"+students.indexOf(x))
-  studentDiv.removeChild(student)
+  id("student-"+students.indexOf(x)).style.display = "none"
 }
 removeStudent("P Abhishek Kumar")
 removeStudent("G Jyothi Swaroop")
