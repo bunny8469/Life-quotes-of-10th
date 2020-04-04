@@ -345,6 +345,12 @@ function checkAllStudents(){
 function checkBirthday(x){
  var dob = dobs[x]
  var dateNum = dob[0]+dob[1]
+ if(gender == "Male"){
+  var obj = "him"
+ }
+ else{
+  var obj = "her"
+ }
  var tukda=dob.split(' ')
  var monthName = tukda[1] 
  var today = new Date();
@@ -354,7 +360,7 @@ function checkBirthday(x){
  var monthIndex = today.getMonth();
  var month = allMonths[monthIndex]
  if(dateNum == date && monthName == month){
-  sweetAlert("It's "+students[x]+" birthday","Have you wished him")
+  sweetAlert("It's "+students[x]+"'s birthday.","Have you wished "+obj+"?")
  }
 }
 indices = shuffle(indices)
