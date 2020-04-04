@@ -69,6 +69,7 @@ header span,.header span{
     width:48px;
     height:48px;
     position:absolute;
+    display:none;
     margin-top:-40px;
     margin-left:10px;
     top:0;
