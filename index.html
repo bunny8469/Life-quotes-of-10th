@@ -139,7 +139,7 @@ setInterval(function() {
              student.className = "student"
              student.id = "student-"+index
              student.onclick = function(){display(index)}
-             student.innerHTML = '<img src = "'+photo+'" class = "img" id = img-'+index+'><img src="http://clipart-library.com/img1/1373858.jpg" class = "crown" id = "crown-"'+index+'></img><p class = "author" id = author-'+index+'>'+name+'</p>'
+             student.innerHTML = '<img src = "'+photo+'" class = "img" id = img-'+index+'><img src="http://clipart-library.com/img1/1373858.jpg" class = "crown" id = "crown-"'+index+'><p class = "author" id = author-'+index+'>'+name+'</p>'
              var parentDiv = document.getElementById("students")
              parentDiv.appendChild(student)
              if(status == "remove"){
