@@ -139,9 +139,10 @@ setInterval(function() {
              student.id = "student-"+index
              student.onclick = function(){display(index)}
              student.innerHTML = '<img src = "'+photo+'" class = "img" id = img-'+index+'><p class = "author" id = author-'+index+'>'+name+'</p>'
+             var parentDiv = document.getElementById("students")
+             parentDiv.appendChild(student)
              if(status == ""){
-              var parentDiv = document.getElementById("students")
-              parentDiv.appendChild(student)
+              student.style.display = "none"
              }
          }
         
