@@ -361,6 +361,7 @@ function checkBirthday(x){
  var month = allMonths[monthIndex]
  if(dateNum == date && monthName == month){
   sweetAlert("It's "+students[x]+"'s birthday.","Have you wished "+obj+"?","warning")
+  id("crown-"+x).style.display = "block"
  }
 }
 indices = shuffle(indices)
