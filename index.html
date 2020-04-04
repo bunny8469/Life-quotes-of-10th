@@ -141,8 +141,8 @@ setInterval(function() {
              student.innerHTML = '<img src = "'+photo+'" class = "img" id = img-'+index+'><p class = "author" id = author-'+index+'>'+name+'</p>'
              var parentDiv = document.getElementById("students")
              parentDiv.appendChild(student)
-             if(status == ""){
-              student.style.display = "none"
+             if(status == "remove"){
+              parentDiv.removeChild(student)
              }
          }
         
@@ -365,9 +365,7 @@ indices = shuffle(indices)
          ["#f6c7c7","#f12b6b","#ff467e","#fd94b4","black"]
                       ];
          // [main], [header], [student], [new-page], [font-color]
-         
-removeStudent("P Abhishek Kumar")
-removeStudent("G Jyothi Swaroop")
+      
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
   
