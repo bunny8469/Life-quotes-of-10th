@@ -91,6 +91,7 @@ setInterval(function() {
          var dobs = [];
          var ambitions = [];
          var genders = [];
+         var statuses = [];
 
          var indices =[];
          var number = 0;
@@ -131,7 +132,7 @@ setInterval(function() {
                 numbers.push(nmbr)
              }
              number++
-
+             statuses.push(status)
              var index = students.indexOf(name)
              indices.push(index)
              var student = document.createElement('p')
@@ -343,21 +344,23 @@ function checkAllStudents(){
 
 indices = shuffle(indices)
          for (i of indices){
-             var student = id('student-'+i)
-             var newStudent = document.createElement('p')
-             newStudent.className = student.className
-             newStudent.innerHTML = student.innerHTML
-             newStudent.onclick = student.onclick
-             newStudent.id = "newStudent-"+i
-             id("students").removeChild(student) 
-             id("students").appendChild(newStudent)
-            var name = "K Sarath Chandra"
-            var minLen = name.length
-            if(students[i].length > minLen){
-            var diff = students[i].length-minLen
-                id("author-"+i).style.fontSize = 150-2*diff+"%"
-            }
-        }
+             if(statuses[i] == ""){
+              var student = id('student-'+i)
+              var newStudent = document.createElement('p')
+              newStudent.className = student.className
+              newStudent.innerHTML = student.innerHTML
+              newStudent.onclick = student.onclick
+              newStudent.id = "newStudent-"+i
+              id("students").removeChild(student) 
+              id("students").appendChild(newStudent)
+              var name = "K Sarath Chandra"
+              var minLen = name.length
+              if(students[i].length > minLen){
+               var diff = students[i].length-minLen
+               id("author-"+i).style.fontSize = 150-2*diff+"%"
+              }
+           }
+        }  
         
          var themes = [
          ["#323232","#000000","#ff1e56","","white"],
