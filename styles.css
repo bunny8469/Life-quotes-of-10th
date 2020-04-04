@@ -71,6 +71,7 @@ header span,.header span{
     height:56px;
     position:absolute;
     top:-10px;
+    z-index:15;
     left:0;
 }
 ::-webkit-scrollbar{
