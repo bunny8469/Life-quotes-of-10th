@@ -342,6 +342,21 @@ function checkAllStudents(){
 // dob
 // number
 
+function checkBirthday(x){
+ var dob = dobs[x]
+ var dateNum = dob[0]+dob[1]
+ var tukda=dob.split(' ')
+ var monthName = tukda[1] 
+ var today = new Date();
+ var date = today.getDate();
+ var allMonths = ["January","February","March","April","May","June","July",
+            "August","September","October","November","December"];
+ var monthIndex = today.getMonth();
+ var month = allMonths[monthIndex]
+ if(dateNum == date && monthName == month){
+  sweetAlert("It's "+students[x]+" birthday","Have you wished him")
+ }
+}
 indices = shuffle(indices)
          for (i of indices){
              if(statuses[i] == ""){
@@ -358,7 +373,7 @@ indices = shuffle(indices)
               if(students[i].length > minLen){
                var diff = students[i].length-minLen
                id("author-"+i).style.fontSize = 150-2*diff+"%"
-              }
+              } 
            }
         }  
         
