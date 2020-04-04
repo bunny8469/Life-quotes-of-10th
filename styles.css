@@ -71,7 +71,7 @@ header span,.header span{
     position:absolute;
     display:none;
     margin-top:-40px;
-    margin-left:10px;
+    margin-left:-15px;
     top:0;
     left:0;
 }
