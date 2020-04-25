@@ -240,6 +240,9 @@ function openSettings(){
     id("settings-page").style.display = "block"
 }
 function changeTheme(x){
+    if(x == 2){
+       sweetAlert("This theme is under development","warning")
+    }
     for(var i = 1;i < 4;i++){
         id("theme-"+i).innerHTML = "Select"
         id("theme-"+i).style.backgroundColor = "#E0E5EC"
